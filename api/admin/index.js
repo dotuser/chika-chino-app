@@ -4,7 +4,7 @@ import { path } from '../constants/const.js';
 const router = express.Router();
 
 router.get('/admin', (req, res) => {
-  res.sendFile(path, '/admin');
+  res.sendFile('../../public/temp/index.html');
 });
   
 export default router;
