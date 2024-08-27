@@ -16,16 +16,13 @@ router.get('/', (req, res) => {
 router.post('/sendWifiPassword', (req, res) => {
   const { name, email, wapp, dob } = req.body;
   const contact = [];
-
-  console.log(req.body);
   
   if (wapp !== '') {
     const formattedNumber = convertPhoneNumber(wapp);
     contact.push(formattedNumber);
-    console.log(contact);
 
     sendWappMsg(contact, 'Wifi Password');
-    res.status(200).send('Well Done')
+    res.status(200).send('Message Sent')
   }
 });
 
